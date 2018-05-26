@@ -14,7 +14,7 @@ mongo = PyMongo(app)
 def hello_world():
     return 'Insert query!'
 
-@app.route('/emojicollection', methods=['GET'])
+@app.route('/emojicollection', methods=['GET','OPTIONS'])
 def get_all_emoji():
 
     myemojicollection = mongo.db.emojicollection
