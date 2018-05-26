@@ -14,14 +14,14 @@ mongo = PyMongo(app)
 def hello_world():
     return 'Insert query!'
 
-@app.route('/emojicollection', methods=['GET','OPTIONS'])
+@app.route('/emojicollection', methods=['GET'])
 def get_all_emoji():
 
     myemojicollection = mongo.db.emojicollection
     output = []
 
     for q in myemojicollection.find():
-        output.append({'unicode':q['unicode'],'nickname':q['nickname']})
+        output.append({'emoji':q['emoji'],'unicode':q['unicode'],'nickname':q['nickname']})
 
     return flask.jsonify(output)
 
