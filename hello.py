@@ -1,7 +1,9 @@
 import flask
 from flask_pymongo import PyMongo
+from flask_cors import CORS
 
 app = flask.Flask(__name__)
+CORS(app)
 
 app.config['MONGO_DBNAME'] = 'emojistoemotionsdatabase'
 app.config['MONGO_URI'] = 'mongodb://seto:123@ds235860.mlab.com:35860/emojistoemotionsdatabase'
